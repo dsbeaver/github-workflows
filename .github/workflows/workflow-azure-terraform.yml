@@ -21,9 +21,5 @@ jobs:
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo $ARM_TENANT_ID 
-        shell: bash
-      - run: echo $ARM_SUBSCRIPTION_ID 
-        shell: bash
-      - run: echo "Done"
+      - run: env 
         shell: bash
