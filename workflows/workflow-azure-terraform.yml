@@ -1,10 +1,6 @@
 name: 'Azure Terraform Pipeline'
 description: 'Azure Terraform generic template '
 runs:
-  using: "composite"
   steps:
     - run: echo "This works"
       shell: bash
-    #- uses: hashicorp/setup-terraform@v2
-    ##  with:
-    #    terraform_version: ${{ env.TF_VERSION }}
