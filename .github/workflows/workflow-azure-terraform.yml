@@ -1,6 +1,12 @@
-name: 'Azure Terraform Pipeline'
-description: 'Azure Terraform generic template '
-runs:
-  steps:
-    - run: echo "This works"
-      shell: bash
+#name: 'Azure Terraform Pipeline'
+#description: 'Azure Terraform generic template '
+on:
+  workflow_call
+
+jobs:
+  terraform:
+    name: Terraform 
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This worked" 
+        shell: bash
