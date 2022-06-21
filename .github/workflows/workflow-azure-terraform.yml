@@ -21,16 +21,19 @@ jobs:
   terraform:
     name: Terraform 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ input.TF_VERSION }} 
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
     steps:
+      - uses: actions/checkout@v2  
       - uses: hashicorp/setup-terraform@v2
-      with:
-        terraform_version: ${{ input_TF.VERSION }} 
-
+        with:
+          terraform_version:  ${{ input.TF_VERSION }}
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
