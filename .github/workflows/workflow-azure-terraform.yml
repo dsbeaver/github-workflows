@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2  
       - uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version:  ${{ input.TF_VERSION }}
+          terraform_version:  ${{ inputs.TF_VERSION }}
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
