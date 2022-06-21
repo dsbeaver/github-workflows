@@ -19,6 +19,8 @@ on:
         required: true
       AZURE_AD_TENANT_ID: 
         required: true
+      TOKEN:  
+        required: true
 
 jobs:
   terraform:
@@ -65,7 +67,7 @@ jobs:
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.TOKEN }}
           script: |
             const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
             #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
