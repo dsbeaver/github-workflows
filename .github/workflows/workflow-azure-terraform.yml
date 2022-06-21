@@ -5,9 +5,11 @@ on:
   workflow_call:
     inputs:
       TF_VERSION:
+        type: string
         required: true
       TF_ACTIONS_WORKING_DIR:  
         required: true
+        type: string
     secrets:
       AZURE_AD_CLIENT_ID: 
         required: true
