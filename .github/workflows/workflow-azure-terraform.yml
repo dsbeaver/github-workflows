@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ${{ inputs.TF_VERSION }} 
+        working-directory: ${{ inputs.TF_ACTIONS_WORKING_DIR }} 
         shell: bash
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
