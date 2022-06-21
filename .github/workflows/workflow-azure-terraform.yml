@@ -1,12 +1,13 @@
 #name: 'Azure Terraform Pipeline'
 #description: 'Azure Terraform generic template '
 on:
-  inputs:
-    TF_VERSION:
-      required: true
-    TF_ACTIONS_WORKING_DIR:  
-      required: true
+  
   workflow_call:
+    inputs:
+      TF_VERSION:
+        required: true
+      TF_ACTIONS_WORKING_DIR:  
+        required: true
     secrets:
       AZURE_AD_CLIENT_ID: 
         required: true
