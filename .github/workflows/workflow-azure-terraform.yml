@@ -63,7 +63,7 @@ jobs:
       - name: Add Plan Comment to PR
         id: comment
         uses: actions/github-script@v3
-        if: github.event_name == 'pull_request'  && github.event.action =! 'closed' && github.event.pull_request.merged =! true
+        if: github.event_name == 'pull_request'  && github.event.action != 'closed' && github.event.pull_request.merged != true
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:
