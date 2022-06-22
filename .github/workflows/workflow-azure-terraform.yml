@@ -31,15 +31,15 @@ jobs:
         shell: bash
     steps:
       - name: Output github 
-        run: echo ${{ toJSON(github) }}
+        run: echo '${{ toJSON(github) }}'
       - name: Output job 
-        run: echo ${{ toJSON(job) }}
+        run: echo '${{ toJSON(job) }}'
       - name: Output github.event_name 
-        run: echo ${{ github.event_name }}
+        run: echo '${{ github.event_name }}'
       - name: Output  github.event.action 
-        run: echo ${{ github.event.action }}
+        run: echo '${{ github.event.action }}'
       - name: Output github.event.pull_request.merged 
-        run: echo ${{ github.event.pull_request.merged }}
+        run: echo '${{ github.event.pull_request.merged }}'
 
   terraform:
     name: Terraform 
