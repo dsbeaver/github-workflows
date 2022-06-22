@@ -61,7 +61,7 @@ jobs:
       
 
       - name: Add Plan Comment to PR
-        id: comment
+        id: plancomment
         uses: actions/github-script@v3
         if: github.event_name == 'pull_request'  && github.event.action != 'closed' && github.event.pull_request.merged != true
         env:
@@ -95,7 +95,7 @@ jobs:
         run: terraform apply -auto-approve
 
       - name: Add Apply Comment to PR
-        id: comment
+        id: applycomment
         uses: actions/github-script@v3
         if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
         env:
