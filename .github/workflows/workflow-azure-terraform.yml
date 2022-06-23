@@ -32,8 +32,8 @@ jobs:
     steps:
       - name: Output github 
         run: echo '${{ toJSON(github) }}'
-      - name: Output job 
-        run: echo '${{ toJSON(job) }}'
+      - name: Output context 
+        run: echo '${{ toJSON(context) }}'
       - name: Output github.event_name 
         run: echo '${{ github.event_name }}'
       - name: Output  github.event.action 
