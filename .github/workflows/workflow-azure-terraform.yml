@@ -108,7 +108,7 @@ jobs:
       - name: Terraform Apply
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         id: apply
-        run: terraform apply -auto-approve
+        run: terraform apply tfplan 
 
       - name: Add Apply Comment to PR
         id: applycomment
