@@ -108,14 +108,14 @@ jobs:
             })
 
       - name: Terraform Apply
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         id: apply
         run: terraform apply -auto-approve
 
       - name: Add Apply Comment to PR
         id: applycomment
         uses: actions/github-script@v3
-        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
           PLAN: "terraform\n${{ steps.apply.outputs.stdout }}"
         with:
