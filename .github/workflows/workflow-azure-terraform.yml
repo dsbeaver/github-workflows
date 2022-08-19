@@ -21,6 +21,8 @@ on:
         required: true
       TOKEN:  
         required: true
+      GIT_SSH_KEY:
+        required: true
 
 jobs:
   debug:
@@ -51,6 +53,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+      
     steps:
       - uses: actions/checkout@v2  
       - uses: webfactory/ssh-agent@v0.5.4
